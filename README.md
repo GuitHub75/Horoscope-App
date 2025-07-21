@@ -1,7 +1,6 @@
 <h2>En el desarrollo del proyecto, se han utilizado las siguientes herramientas y tecnologías:</h2>
   <ul>
     <li><b>Kotlin</b>: Lenguaje de programación principal utilizado para el desarrollo de la aplicación.</li>
-    <li><b>Java</b>: Lenguaje adicional utilizado en algunas partes del proyecto.</li>
     <li><b>Clean Code</b>: Prácticas de código limpio para mejorar la legibilidad y mantenibilidad.</li>
     <li><b>Arquitectura MVVM</b>: Patrón de arquitectura para separar la lógica de negocio de la interfaz de usuario.</li>
     <li><b>Fragments</b>: Uso de fragments para modularizar la interfaz de usuario.</li>
