@@ -1,17 +1,29 @@
 <h2>En el desarrollo del proyecto, se han utilizado las siguientes herramientas y tecnologías:</h2>
-<ul>
-  <li><b>Kotlin</b>: Lenguaje de programación principal utilizado para el desarrollo de la aplicación.</li>
-  <li><b>Git</b>: Sistema de control de versiones utilizado para gestionar el código fuente del proyecto.</li>
-  <li><b>GitHub</b>: Plataforma de alojamiento de código fuente y colaboración utilizada para el proyecto.</li>
-  <li><b>Android Studio</b>: Entorno de desarrollo integrado (IDE) utilizado para desarrollar aplicaciones Android.</li>
-  <li><b>Gradle</b>: Herramienta de automatización de compilación utilizada para gestionar las dependencias y construir el proyecto.</li>
-  <li><b>Firebase</b>: Plataforma de desarrollo de aplicaciones móviles que proporciona servicios como autenticación, base de datos en tiempo real y almacenamiento en la nube.</li>
-  <li><b>Retrofit</b>: Biblioteca de cliente HTTP para Android y Java que facilita la comunicación con servicios web RESTful.</li>
-  <li><b>Glide</b>: Biblioteca de carga y caché de imágenes para Android que simplifica la gestión de imágenes en la aplicación.</li>
-  <li><b>MVVM</b>: Patrón de arquitectura utilizado para separar la lógica de negocio de la interfaz de usuario, facilitando el mantenimiento y la escalabilidad del código.</li>
-  <li><b>Coroutines</b>: Biblioteca de Kotlin que permite escribir código asíncrono de manera más sencilla y legible, mejorando la gestión de tareas en segundo plano.</li>
-  <li><b>Room</b>: Biblioteca de persistencia de datos que proporciona una capa de abstracción sobre SQLite, facilitando el acceso a la base de datos local.</li>
-  <li><b>Dagger Hilt</b>: Biblioteca de inyección de dependencias que simplifica la gestión de dependencias en aplicaciones Android.</li>
-  <li><b>Diseño Avanzado de Interfaces de Usuario</b>: Se han implementado prácticas avanzadas de diseño de interfaces de usuario para mejorar la experiencia del usuario, incluyendo animaciones, transiciones y adaptabilidad a diferentes tamaños de pantalla.</li>
-  <li><b>Testing</b>: Se han implementado pruebas unitarias y de integración para garantizar la calidad del código y el correcto funcionamiento de la aplicación.</li>
-</ul>
+  <ul>
+    <li><b>Kotlin</b>: Lenguaje de programación principal utilizado para el desarrollo de la aplicación.</li>
+    <li><b>Java</b>: Lenguaje adicional utilizado en algunas partes del proyecto.</li>
+    <li><b>Clean Code</b>: Prácticas de código limpio para mejorar la legibilidad y mantenibilidad.</li>
+    <li><b>Arquitectura MVVM</b>: Patrón de arquitectura para separar la lógica de negocio de la interfaz de usuario.</li>
+    <li><b>Fragments</b>: Uso de fragments para modularizar la interfaz de usuario.</li>
+    <li><b>Navigation Component</b>: Gestión de la navegación entre fragments y actividades.</li>
+    <li><b>Gradle KTS</b>: Uso de Kotlin DSL para la configuración de Gradle.</li>
+    <li><b>Git</b>: Sistema de control de versiones.</li>
+    <li><b>GitHub</b>: Plataforma de alojamiento y colaboración de código.</li>
+    <li><b>Android Studio</b>: Entorno de desarrollo integrado (IDE).</li>
+    <li><b>Gradle</b>: Herramienta de automatización de compilación.</li>
+    <li><b>Firebase</b>: Servicios como autenticación, base de datos y almacenamiento en la nube.</li>
+    <li><b>Retrofit</b>: Cliente HTTP para comunicación con servicios web RESTful.</li>
+    <li><b>Interceptors</b>: Interceptores para manipular peticiones y respuestas HTTP.</li>
+    <li><b>Mappers</b>: Transformación de datos entre modelos y entidades.</li>
+    <li><b>Glide</b>: Carga y caché de imágenes.</li>
+    <li><b>StateFlow y corrutinas</b>: Gestión de estados y tareas asíncronas.</li>
+    <li><b>Room</b>: Persistencia de datos local con SQLite.</li>
+    <li><b>Dagger Hilt</b>: Inyección de dependencias.</li>
+    <li><b>RecyclerView</b>: Listas y grids eficientes en la interfaz de usuario.</li>
+    <li><b>Intents</b>: Comunicación entre componentes de Android.</li>
+    <li><b>Camera X</b>: Integración de cámara moderna en Android.</li>
+    <li><b>Animaciones</b>: Mejoras visuales y transiciones en la interfaz.</li>
+    <li><b>UnitTest y UITest</b>: Pruebas unitarias y de interfaz de usuario.</li>
+    <li><b>Diseño Avanzado de Interfaces de Usuario</b>: Animaciones, transiciones y adaptabilidad.</li>
+    <li><b>Testing</b>: Pruebas para garantizar la calidad y funcionamiento.</li>
+  </ul>
