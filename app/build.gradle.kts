@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt.android)
+    id("kotlin-kapt") // For annotation processing with Hilt
 }
 
 android {
@@ -53,4 +55,9 @@ dependencies {
     //add navigation component dependencies
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
+
+    //add dagger hilt dependencies 2.48
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler) // kapt is used for annotation processing in Kotlin
+
 }
