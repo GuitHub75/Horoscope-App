@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.cocodev2500.horoscopoapp.R
 import com.cocodev2500.horoscopoapp.databinding.FragmentLuckBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LuckFragment : Fragment() {
-
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

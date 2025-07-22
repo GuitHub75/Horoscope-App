@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.androidx.navigation.safe.args)// Navigation Safe Args plugin
     id("kotlin-kapt") // For annotation processing with Hilt
 }
 
