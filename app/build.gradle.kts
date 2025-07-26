@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.fir.scopes.debugCollectOverrides
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -21,12 +23,18 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"") // Example base URL
+        }
+        getByName("debug") {
+            isDebuggable = true
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"") // Example base URL
         }
     }
     compileOptions {
@@ -39,6 +47,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -60,5 +69,10 @@ dependencies {
     //add dagger hilt dependencies 2.48
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler) // kapt is used for annotation processing in Kotlin
+
+    //retrofit dependencies
+    implementation(libs.retrofit)//for network requests
+    implementation(libs.converter.gson)//for json parsing
+        implementation (libs.logging.interceptor)
 
 }

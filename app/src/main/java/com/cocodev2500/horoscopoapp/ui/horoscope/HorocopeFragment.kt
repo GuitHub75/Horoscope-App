@@ -47,12 +47,12 @@ class HorocopeFragment : Fragment() {
                 HoroscopeInfo.Aries -> HoroscopeModel.Aries
                 HoroscopeInfo.Cancer -> HoroscopeModel.Cancer
                 HoroscopeInfo.Capricorn -> HoroscopeModel.Capricorn
-                HoroscopeInfo.Gemini -> HoroscopeModel.Geminis
+                HoroscopeInfo.Gemini -> HoroscopeModel.Gemini
                 HoroscopeInfo.Leo ->   HoroscopeModel.Leo
                 HoroscopeInfo.Libra -> HoroscopeModel.Libra
                 HoroscopeInfo.Pisces -> HoroscopeModel.Pisces
                 HoroscopeInfo.Sagittarius ->  HoroscopeModel.Sagittarius
-                HoroscopeInfo.Scorpio -> HoroscopeModel.Escorpio
+                HoroscopeInfo.Scorpio -> HoroscopeModel.Scorpio
                 HoroscopeInfo.Taurus ->  HoroscopeModel.Taurus
                 HoroscopeInfo.Virgo -> HoroscopeModel.Virgo
             }
