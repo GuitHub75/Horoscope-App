@@ -1,5 +1,6 @@
 package com.cocodev2500.horoscopoapp.ui.luck
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,11 +15,17 @@ import kotlin.random.Random
 import android.view.animation.Animation
 import android.view.animation.DecelerateInterpolator
 import androidx.core.view.isVisible
+import com.cocodev2500.horoscopoapp.ui.core.listeners.OnSwipeTouchListener
+import com.cocodev2500.horoscopoapp.ui.providers.RandomCardProvider
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LuckFragment : Fragment() {
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var randomCardProvider: RandomCardProvider
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,13 +33,40 @@ class LuckFragment : Fragment() {
     }
 
     private fun initUI() {
+        preparePrediction()
         initListeners()
     }
 
-    private fun initListeners() {
-        binding.ivRulette.setOnClickListener {
-            spinRulette()
+    private fun preparePrediction() {
+        val currentluck = randomCardProvider.getLucky()
+        currentluck?.let { luck ->
+            val currentPrediction = getString(luck.text)
+            binding.tvLucky.text = currentPrediction
+            binding.ivLuckCard.setImageResource(luck.image)
+            binding.tvShare.setOnClickListener { shareResult(currentPrediction) }
         }
+    }
+
+    private fun shareResult(prediction: String) {
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, prediction)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(shareIntent, null))
+    }
+
+
+    private fun initListeners() {
+        binding.ivRulette.setOnTouchListener( object : OnSwipeTouchListener (requireContext()){
+            override fun onSwipeRight() {
+                spinRulette()
+            }
+
+            override fun onSwipeLeft() {
+                spinRulette()
+            }
+        })
     }
 
     private fun spinRulette() {
@@ -113,3 +147,4 @@ class LuckFragment : Fragment() {
     }
 
 }
+
