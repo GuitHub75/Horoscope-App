@@ -73,6 +73,13 @@ dependencies {
     //retrofit dependencies
     implementation(libs.retrofit)//for network requests
     implementation(libs.converter.gson)//for json parsing
-        implementation (libs.logging.interceptor)
+    implementation (libs.logging.interceptor)
+
+    //CAMERA X
+    implementation (libs.androidx.camera.core)
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.view)
+    implementation (libs.androidx.camera.extensions)
 
 }
