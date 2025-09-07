@@ -1,12 +1,19 @@
 package com.cocodev2500.horoscopoapp.ui.palmistry
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.content.ContentProviderCompat
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
 import com.cocodev2500.horoscopoapp.databinding.FragmentPalmistryBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,8 +32,9 @@ class PalmistryFragment : Fragment() {
             ActivityResultContracts.RequestPermission()
         ) { isGranted: Boolean ->
             if (isGranted) {
-               //startCamera()
+               startCamera()
             } else {
+                val context = requireContext()
                 Toast.makeText(requireContext(), "Acepta los permisos para una experiencia magica", Toast.LENGTH_SHORT).show()
             }
         }
@@ -42,7 +50,7 @@ class PalmistryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (checkCameraPermission()) {
-            //tiene los permisos
+            startCamera()
         } else {
             requestCameraPermissionLauncher.launch(CAMERA_PERMISSION_CODE)
         }
@@ -55,4 +63,29 @@ class PalmistryFragment : Fragment() {
         ) == PermissionChecker.PERMISSION_GRANTED
     }
 
+    private fun startCamera() {
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
+
+        cameraProviderFuture.addListener({
+            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+
+            val preview = Preview.Builder()
+                .build()
+                .also {
+                    it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
+                }
+
+            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+
+            try{
+                cameraProvider.unbindAll()
+                cameraProvider.bindToLifecycle(this, cameraSelector, preview)
+            }catch (e:Exception){
+                Log.e("Erick", "Algo fallo ${e.message}")
+            }
+        }, ContextCompat.getMainExecutor(requireContext()))
+    }
+
 }
+
+
